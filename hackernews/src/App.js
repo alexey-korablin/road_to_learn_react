@@ -151,8 +151,12 @@ console.log(url);
 // }
 
 // Example of HOC
-const withLoading = (Component) => (isLoading, ...rest) => isLoading ?
-  <Loading /> : <Component { ...rest }/>
+const withLoading = (Component) => ({ isLoading, ...rest }) => {
+  console.log('isLoading', isLoading);
+  console.log('rest', rest);
+  return (isLoading ?
+    <Loading /> : <Component { ...rest }/>)
+}
 
 const ButtonWithLoading = withLoading(Button);
 
@@ -166,9 +170,7 @@ class App extends Component {
       searchKey: '',
       searchTerm: DEFAULT_QUERY ,
       error: null,
-      isLoading: false,
-      sortKey: 'NONE',
-      isSortReverse: false
+      isLoading: false
     };
     this.setSearchTopStories = this.setSearchTopStories.bind(this);
     this.fetchSearchTopStories = this.fetchSearchTopStories.bind(this);
@@ -176,7 +178,6 @@ class App extends Component {
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.isNeedToSearchTopStories = this.isNeedToSearchTopStories.bind(this);
-    this.onSort = this.onSort.bind(this);
   }
 
   isNeedToSearchTopStories(searchTerm) {
@@ -190,11 +191,6 @@ class App extends Component {
       &${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HPP}`)
       .then(result => this._isMounted && this.setSearchTopStories(result.data))
       .catch(error => this._isMounted && this.setState({ error }));
-  }
-
-  onSort(sortKey) {
-    const isSortReverse = this.state.sortKey === sortKey && !this.state.isSortReverse;
-    this.setState({ sortKey, isSortReverse });
   }
 
   onSearchSubmit(event) {
@@ -254,9 +250,7 @@ class App extends Component {
             searchKey,
             results,
             error,
-            isLoading,
-            sortKey,
-            isSortReverse } = this.state;
+            isLoading } = this.state;
     const page = (results && results[searchKey] && results[searchKey].page) || 0;
     const list = (results && results[searchKey] && results[searchKey].hits) || [];
 
@@ -279,10 +273,7 @@ class App extends Component {
           <div className='interactions'><p>Something went wrong...</p></div> :
           <Table 
           list={ list }
-          onDismiss={ this.onDismiss }
-          onSort={ this.onSort }
-          sortKey={ sortKey }
-          isSortReverse={ isSortReverse } />}
+          onDismiss={ this.onDismiss }/>}
         
         <div className='interactions'>
           <ButtonWithLoading 
