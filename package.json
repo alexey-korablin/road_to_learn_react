@@ -1,0 +1,21 @@
+{
+  "name": "road_to_learn_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexey-korablin/road_to_learn_react.git"
+  },
+  "keywords": [],
+  "author": "'Alexey_Korablin' <'Alexey_Korablin@epam.com'>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexey-korablin/road_to_learn_react/issues"
+  },
+  "homepage": "https://github.com/alexey-korablin/road_to_learn_react#readme",
+  "dependencies": {}
+}
