@@ -1,21 +1,35 @@
 {
-  "name": "road_to_learn_react",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "hackernews",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexey-korablin/road_to_learn_react.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [],
-  "author": "'Alexey_Korablin' <'Alexey_Korablin@epam.com'>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexey-korablin/road_to_learn_react/issues"
-  },
-  "homepage": "https://github.com/alexey-korablin/road_to_learn_react#readme",
-  "dependencies": {}
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.6"
+  }
 }
