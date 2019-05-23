@@ -291,24 +291,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Mikheev S. 3
-// Filatov A. 6
-// Milovanov A. 3
-// Morozov A. 10
-// Shcheglov A. 1
-// Kuzmin A. 3
-// Spatar A. 3
-// Likhachev A. 3
-// Gorbatenko B. 4
-// Rodin E. 1
-// Glazunov M. 2
-// Savin N. 9
-// Kodeikin S. 2
-// Abramkin S. 4
-// Voronin V. 4
-// Alexey 4
-// Miroshin V. 6
-// Zubkov N. 11
-// Serazhiev S. 3
-// Korablin A. 11
