@@ -59,7 +59,7 @@ export class Table extends Component {
           Archive
         </span>
       </div>
-      {reverseSortedList.map(item => <div key={item.objectID} className='table-row'>
+      {reverseSortedList.map(item => item.title && item.url ? <div key={item.objectID} className='table-row'>
           <span style={largeColumn}>
             <a href={item.url} target='_blank' rel="noopener noreferrer">{item.title} </a>
           </span>
@@ -71,7 +71,7 @@ export class Table extends Component {
               Dismiss
             </Button>
           </span>
-        </div>)}
+        </div> : null)}
     </section>);
   }
 }
